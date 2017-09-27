@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5. 父元素浮动</title>
+    <style>
+        .outer{
+            border: 1px solid black;
+            width: 300px;
+            float: left;
+        }
+        .inner{
+            width: 50px;
+            height: 50px;
+            background-color: #ff4400;
+            margin-right: 20px;
+            float: left;
+        }
+        .footer{
+            background-color: #005FC3;
+            width: 200px;
+            height: 100px;
+        }
+ /*由于其它元素受到了影响，所以需要：-- >*/
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .clearfix{
+            zoom: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner"></div>
+    <div class="inner"></div>
+    <div class="inner"></div>
+</div>
+<div class="clearfix"></div>
+<div class="footer"></div>
+</body>
+</html>
